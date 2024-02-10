@@ -4,11 +4,13 @@ import ControlPresupuesto from './ControlPresupuesto'
 
 
 //Extraer el states que se paso de header
-const Header = ({ presupuesto,
+const Header = ({
+  presupuesto,
   setPresupuesto,
   isValidPresupuesto,
   setIsValidPresupuesto,
-  gastos
+  gastos,
+  setGastos
 }) => {
   return (
     <header>
@@ -16,8 +18,11 @@ const Header = ({ presupuesto,
 
       {isValidPresupuesto ? (
         <ControlPresupuesto
-        gastos={gastos}
+          gastos={gastos}
+          setGastos={setGastos}
+          setPresupuesto={setPresupuesto}
           presupuesto={presupuesto}
+          setIsValidPresupuesto={setIsValidPresupuesto}
         />
       ) : (
         <NuevoPresupuesto
